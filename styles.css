@@ -22,6 +22,7 @@
   border-radius: 50px;
   padding: 5px;
   outline: solid 0.1px green;
+  appearance: none;
 }
 
 .toggle::before {
@@ -40,7 +41,7 @@
 
 /* ANIMATIONS */
 
-.toggle:click {
+.toggle:checked {
   background: var(--blue);
 }
 
