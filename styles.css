@@ -1,0 +1,52 @@
+:root {
+  --blue: #35b5ff;
+  --green: #03ff3f;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  border: none;
+}
+
+.toggle {
+  /*middle = half screen size minus button's half size*/
+  width: 200px;
+  height: 100px;
+  position: absolute;
+  left: calc(50% - 100px);
+  bottom: calc(50% - 50px);
+
+  background-color: var(--green);
+  border-radius: 50px;
+  padding: 5px;
+  outline: solid 0.1px green;
+}
+
+.toggle::before {
+  position: absolute;
+  left: 5px;
+  top: 5px;
+  content: "";
+  width: 90px;
+  height: 90px;
+  background: radial-gradient(white 40px, gray 65px 81px);
+  border-radius: 45px;
+  transition: 300ms;
+  box-shadow: 5px 0 5px #0007;
+  transition: 300ms translate ease-out, 1000ms box-shadow;
+}
+
+/* ANIMATIONS */
+
+.toggle:click {
+  background: var(--blue);
+}
+
+.toggle:checked::before {
+  transition: 300ms translate ease-out, 500ms box-shadow;
+  translate: 110%;
+  box-shadow: -5px 0 5px #0007;
+}
+
